@@ -1,1 +1,20 @@
-console.log("Backend Started");
+const express=require('express');
+const dotenv=require('dotenv');
+const cors=require('cors');
+
+dotenv.config();
+
+const app=express();
+
+app.use(cors());
+app.use(express.json()); //Allows backend to read JSON From Frontend
+
+app.get("/",(req,res)=>{
+  res.send("API Running...");
+});
+
+const PORT=process.env.PORT || 5000;
+
+app.listen(PORT,()=>{
+  console.log(`Server Running at http://localhost:${PORT}`);
+})
