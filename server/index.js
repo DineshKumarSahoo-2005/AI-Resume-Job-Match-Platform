@@ -15,6 +15,12 @@ app.get("/",(req,res)=>{
 
 const PORT=process.env.PORT || 5000;
 
+const connectDB =require("./config/db");
+connectDB();
+
+const userRoutes=require("./routes/userRoutes");
+app.use("/api/users", userRoutes);
+
 app.listen(PORT,()=>{
   console.log(`Server Running at http://localhost:${PORT}`);
 })
