@@ -21,6 +21,9 @@ connectDB();
 const userRoutes=require("./routes/userRoutes");
 app.use("/api/users", userRoutes);
 
+const authRoutes = require("./routes/authRoutes");
+app.use("/api/auth", authRoutes);
+
 app.listen(PORT,()=>{
   console.log(`Server Running at http://localhost:${PORT}`);
 })
