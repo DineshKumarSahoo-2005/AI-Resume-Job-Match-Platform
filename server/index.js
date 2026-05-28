@@ -24,6 +24,9 @@ app.use("/api/users", userRoutes);
 const authRoutes = require("./routes/authRoutes");
 app.use("/api/auth", authRoutes);
 
+const resumeRoutes = require("./routes/resumeRoutes");
+app.use("/api/resume", resumeRoutes);
+
 app.listen(PORT,()=>{
   console.log(`Server Running at http://localhost:${PORT}`);
 })
