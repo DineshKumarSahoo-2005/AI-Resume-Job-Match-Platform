@@ -1,11 +1,30 @@
 const Resume = require("../models/Resume");
+const fs = require("fs");
+const pdfParse = require("pdf-parse");
+
+const SKILLS = ["Java","JavaScript","React","Node.js","Express","MongoDB","Python",
+  "SQL","Git","HTML","CSS"];
+
+const extractSkills = (text) => {
+    return SKILLS.filter(skill =>
+        text.toLowerCase().includes(
+            skill.toLowerCase()
+        )
+    );
+};
 
 exports.uploadResume = async (req, res) => {
     try {
+        const dataBuffer = fs.readFileSync(req.file.path);
+        const pdfData = await pdfParse(dataBuffer);
+        const extractedText = pdfData.text;
+        const skills = extractSkills(extractedText);
         const resume = await Resume.create({
             user: req.user._id,
             originalName: req.file.originalname,
             filePath: req.file.path,
+            extractedText,
+            skills,
         });
         res.status(201).json({
             success: true,
