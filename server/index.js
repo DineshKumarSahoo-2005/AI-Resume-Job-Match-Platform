@@ -30,6 +30,9 @@ app.use("/api/resume", resumeRoutes);
 const jobRoutes = require("./routes/jobRoutes");
 app.use("/api/jobs", jobRoutes);
 
+const matchRoutes = require("./routes/matchRoutes");
+app.use("/api/match", matchRoutes);
+
 app.listen(PORT,()=>{
   console.log(`Server Running at http://localhost:${PORT}`);
 })
