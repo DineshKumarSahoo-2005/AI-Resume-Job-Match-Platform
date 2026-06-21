@@ -13,3 +13,18 @@ export const uploadResume = async (file) => {
   });
   return response.data;
 };
+
+export const getMyResume = async () => {
+  const token = localStorage.getItem("token");
+
+  const response = await axios.get(
+    "http://localhost:5000/api/resume/my-resume",
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+
+  return response.data;
+};

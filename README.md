@@ -1,2 +1,29 @@
-# AI-Resume-Job-Match-Platform
-AI-powered MERN application for resume parsing, job matching, and skill gap analysis using NLP and similarity scoring.
+# HireSense AI
+
+AI-powered Resume Analysis and Job Matching Platform
+
+## Features
+
+- Resume Parsing
+- AI Resume Insights
+- Job Matching
+- Recruiter Dashboard
+- Candidate Dashboard
+- Interview Scheduling
+- Offer Letter Generation
+- Real-time Notifications
+
+## Tech Stack
+
+Frontend:
+- React
+- Tailwind CSS
+- Vite
+
+Backend:
+- Node.js
+- Express.js
+- MongoDB
+
+AI:
+- OpenRouter API

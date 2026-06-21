@@ -23,6 +23,9 @@ const jobSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
+    location: String,
+    package: String,
+    jobType: String,
   },
   { timestamps: true },
 );
